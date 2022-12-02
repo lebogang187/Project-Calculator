@@ -1,0 +1,50 @@
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(to right, #030303, #ffffff);
+}
+
+h1{
+    color:aliceblue;
+}
+
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button{
+    cursor: pointer;
+    border: solid 1px whitesmoke;
+}
+
+.span-two{
+    grid-column: span 2;
+}
+
+.output{
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px;
+    background-color: rgb(0, 0, 0, .70);
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.previousNum{
+    color: rgb(216, 216, 216, .70);
+    font-size: 1.5rem;
+}
+
+.currentNum{
+    color: whitesmoke;
+    font-size: 2.5rem;
+ }
