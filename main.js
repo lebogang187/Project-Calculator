@@ -58,7 +58,12 @@ class Calculator {                                                              
 
     updateDisplay() {                                                                                   // updates the values that needs to be displayed in the output
         this.currentOperandTextElement.innerText = this.currentOperand
-        this.previousOperandTextElement.innerText = this.previousOperand
+        if(this.operator != null){
+            this.previousOperandTextElement.innerText = `${this.previousOperand} ${this.operator}`      // displays the previous number and operator
+        }
+        else{
+            this.previousOperandTextElement.innerText = ''
+        }
     }
 }
 
