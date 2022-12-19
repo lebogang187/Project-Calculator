@@ -12,7 +12,7 @@ class Calculator {                                                              
     }
 
     delete() {                                                                                          // delete function, deletes or removes a single number or operator when you click the DEL button
-     
+        this.currentOperand = this.currentOperand.toString().slice(0, -1)                               // takes the last number and chops it off(deletes/slices)
     }
 
     appendNumber(number) {                                                                              // this function appends or adds a number to the screen
@@ -87,12 +87,17 @@ operationButtons.forEach(button => {
     })
 })
 
-equalButton.addEventListener('click', button => {
+equalButton.addEventListener('click', _button => {                                                      // prefixed all eventListener buttons with an underscore(_) declaration correctness 
     calculator.compute()
     calculator.updateDisplay()
 })
 
-clearButton.addEventListener('click', button => {
+clearButton.addEventListener('click', _button => {
     calculator.clear()
+    calculator.updateDisplay()
+})
+
+deleteButton.addEventListener('click', _button => {
+    calculator.delete()
     calculator.updateDisplay()
 })
